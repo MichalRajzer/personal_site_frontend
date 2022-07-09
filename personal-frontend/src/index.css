@@ -53,6 +53,7 @@ a {
   height: 100%;
   padding: 0;
   align-items: right;
+  overflow: hidden;
 }
 
 .navbar > :nth-child(1) {
@@ -75,9 +76,55 @@ a {
 
 .nameHeader {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin: auto;
+}
+
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+}
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-2s;
+	-webkit-animation-delay:-2s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+.arrows path {
+	stroke: #75f37f;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 3s infinite;
+	-webkit-animation: arrow 3s infinite; 
 }
 
 @media screen and (max-width: 1000px) {
@@ -141,12 +188,13 @@ a {
 @media screen and (min-width: 1500px) {
   .nameHeader {
     height: 96vh;
-    margin-left: 10vw;
+    padding-left: 6vw;
     font-size: 2.2vw;
   }
   .navbar {
-    padding: 1vh 2vw 0 2vw;
+    padding: 2vh 2vw 0 2vw;
     width: 96vw;
+    height:7vh;
   }
 
   .navigation {
@@ -156,7 +204,8 @@ a {
   .nav-link {
     margin-right: 1vw;
     margin-left: 1vw;
-    font-size: 5vh;
+    font-size: 4vh;
+    height:100%;
   }
   .content {
     padding-top: 9vh;

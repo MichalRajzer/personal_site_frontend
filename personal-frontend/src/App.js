@@ -7,24 +7,33 @@ function App() {
   return (
     <div>
       <Navbar current="/">About</Navbar>
-      <Router>
-        <About path="/" />
-        <Posts path="/blog" />
-        <Post path="/blog/posts/:id" />
-      </Router>
+      <div className="content">
+        <Router>
+          <About path="/" />
+          <Posts path="/blog" />
+          <Post path="/blog/posts/:id" />
+        </Router>
+      </div>
     </div>
   );
 }
 
 const About = (props) => (
-  <div className="content">
+  <div>
     <div className="nameHeader">
-      <div>
+      <div style={{ padding: 0, margin: 0 }}>
         <h1>Hey!</h1>
         <h1>My name is Michał</h1>
         <h1> I'm a fullstack developer!</h1>
       </div>
     </div>
+    <svg class="arrows">
+      <path class="a1" d="M0 0 L30 32 L60 0"></path>
+      <path class="a2" d="M0 20 L30 52 L60 20"></path>
+      <path class="a3" d="M0 40 L30 72 L60 40"></path>
+    </svg>
+
+    <div></div>
   </div>
 );
 
